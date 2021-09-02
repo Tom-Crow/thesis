@@ -457,7 +457,7 @@ If we are able to record the truly continuous values for $n$ i.i.d observations 
 In the case where we can only observe aggregated observations --- with observed counts $n_k$ for how many observations lie within each $\Delta$-sized bin, $B_k$ --- we have:
 \begin{equation*}
 	\begin{aligned}
-		\mathbb{P}(x \in B_k; \lambda) &= \int_{x=k\Delta}^{(k+1)\Delta}{\lambda e^{- \lambda x} dx} = e^{- \lambda k\Delta}(1 - e^{- \lambda}) \\
+		\mathbb{P}(x \in B_k; \lambda) &= \int_{x=k\Delta}^{(k+1)\Delta}{\lambda e^{- \lambda x} \diff x} = e^{- \lambda k\Delta}(1 - e^{- \lambda}) \\
 		L(\lambda ; n_0, n_1, \dots) &= (1-e^{- \Delta\lambda})^{n_0}(e^{- \Delta\lambda} - e^{- 2\Delta\lambda})^{n_1} \dots (e^{- \lambda k\Delta} - e^{-\lambda (k+1)\Delta})^{n_k} \dots \\
 		&= \prod_{k=0}^{\infty}{e^{- \lambda k \Delta n_k}(1 - e^{- \lambda \Delta})^{n_k}}, \\
 		\ell(\lambda; n_0, n_1, \dots) &= \sum_{k=0}^\infty n_k \left(\log(1 - e^{- \lambda \Delta}) - \lambda k \Delta \right) \\
@@ -1026,7 +1026,7 @@ We begin in the `safe' aggregation setting, with $K=50$ and $\Delta=0.5$. Figure
 	\label{fig:nhpp_periodic_id_log_likeli}
 \end{figure}
 \newpage\noindent
-Figure \ref{fig:nhpp_periodic_unid_log_likeli}, however, shows a different story. In this, we are showing a simulation in the setting where $K=13$, and $\Delta=25/13$. While the raw observations' log-likelihood function again estimates the value of $\omega=\pi$ almost exactly; the maximum likelihood estimate in the binned case is much further away, with $\hat{\omega}_{bin} = 4.094$. Further, we can see that the binned log-likelihood curve is almost completely flat over the plotted range. This is a clear demonstration of practical unidentifiability for this model: the flatness of the curve demonstrates a Hessian with value near 0, meaning the Information matrix is, very nearly, non-invertible. It is impossible to perform inference in a setting such as this where we have over-aggregated our data; the periodicity has been lost in the bins.
+Figure \ref{fig:nhpp_periodic_unid_log_likeli}, however, shows a different story. In this, we are showing a simulation in the setting where $K=13$, and $\Delta=25/13$. While the raw observations' log-likelihood function again estimates the value of $\omega=\pi$ almost exactly; the maximum likelihood estimate in the binned case is much further away, with $\hat{\omega}_{bin} = 4.094$. Further, we can see that the binned log-likelihood curve is almost completely flat over the plotted range. This is a clear demonstration of practical identifiability for this model: the flatness of the curve demonstrates a Hessian with value near 0, meaning the Information matrix is, very nearly, non-invertible. It is impossible to perform inference in a setting such as this where we have over-aggregated our data; the periodicity has been lost in the bins.
 \begin{figure}[!h]
 	\includegraphics[height=10cm, width=16cm]{nhpp_periodic_unid_log_likeli.pdf}
 	\centering
