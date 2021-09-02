@@ -852,7 +852,7 @@ Again, we can derive the Hessian from these for the general aggregated polynomia
 
 
 \subsection{Information Loss}
-For this problem, the loss of information is more difficult to evaluate in two ways. Firstly, the Fisher Information matrix is analytically intractable, meaning we must evaluate it numerically via Monte Carlo simulations. Secondly, the off-diagonal elements are always negative for both the Hessian in both the continuous and binned settings, meaning our Fisher Information matrices will not be diagonal. 
+For this problem, the loss of information is more difficult to evaluate in two ways. Firstly, the Fisher Information matrix is analytically intractable, meaning we must evaluate it numerically via Monte Carlo simulations. Secondly, the off-diagonal elements are always negative for the Hessians in both the continuous and binned settings, meaning our Fisher Information matrices will not be diagonal. 
 
 When the Fisher Information matrix is not diagonal, errors in inference performed on one variable will have an effect on inference performed on other variables. Due to this, we cannot simply compare loss of information parameter-wise. \\\\
 To demonstrate the loss of information, we will estimate the Fisher information for a toy problem. We define our rate function as
@@ -1191,6 +1191,11 @@ For stochastic processes, we have only scratched the surface. Our approach on Po
 \appendix % This line declares that you are starting the appendix.
 % If you want a single Appendix and want it to be called Appendix instead of Appendix A, the following should work:
 %\setcounter{secnuk Depth}{-1} %This turns off automatic chapter numbering
+
+\chapter{Code}
+All code can be found in the GitHub repository \href{https://github.com/Tom-Crow/thesis}{Thesis}.
+\begingroup
+\let\clearpage\relax
 \chapter{Tables}
 \begin{table}[ht]
 	\centering
@@ -1259,5 +1264,5 @@ For stochastic processes, we have only scratched the surface. Our approach on Po
 	\caption{Table showing three data-scenario standard deviation in $\mu$ maximum likelihood estimate errors for three zero-mean Normal inference problems.}
 	\label{tab:mu_hat_std_offset}
 \end{table}
-
+\endgroup
 \end{document}
